@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>[group] textbox fixed height &amp; shrink font</title>
+
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.3/fabric.min.js"></script>
+    <script type="text/javascript" src="../src/responsive-textbox.js"></script>
+    <style type="text/css">
+      canvas {
+        border: 1px solid #999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="canvas-container">
+      <canvas id="c" width="500" height="500"></canvas>
+      <p id="text1-size"></p>
+      <p id="text2-size"></p>
+    </p>
+
+    <script type="text/javascript">
+      window.onload = function() {
+
+        var canvas = new fabric.Canvas('c');
+
+        // Non-Latin Characters
+        var text1 = new fabric.ResponsiveTextbox('Textbox1: 목숨이 그들은 내는 고동을 돋고, 위하여 싶이 산야에 약동하다. 아니더면, 곳으로 있는 그들은 뿐이다. 생명을 사랑의 인간이 없으면 두손을 예가 그들의 타오르고 뿐이다.', {
+          top: 100,
+          left: 100,
+          width: 300,
+          maxWidth: 300,
+          maxHeight: 100,
+          fontSize: 20,
+          textAlign: "center",
+        });
+
+        // Latin Characters
+        var text2 = new fabric.ResponsiveTextbox('Textbox2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id venenatis diam. Sed pellentesque dignissim consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id venenatis diam. Sed pellentesque dignissim consequat.', {
+          top: 250,
+          left: 100,
+          width: 300,
+          maxWidth: 300,
+          maxHeight: 100,
+          fontSize: 20,
+          textAlign: "center",
+        });
+
+        canvas.add(text1, text2);
+        document.getElementById('text1-size').innerHTML = 'Textbox1 Resized FontSize: ' + text1.originFontSize + ' => ' + text1.fontSize;
+        document.getElementById('text2-size').innerHTML = 'Textbox2 Resized FontSize: ' + text2.originFontSize + ' => ' + text2.fontSize;
+        canvas.renderAll();
+      }
+    </script>
+  </body>
+</html>

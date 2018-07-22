@@ -1,0 +1,30 @@
+{
+  "name": "fabric-addon",
+  "version": "0.1.0",
+  "description": "Supportive library for fabricjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darron1217/fabric-addon.git"
+  },
+  "keywords": [
+    "fabric",
+    "fabricjs",
+    "addon",
+    "extension",
+    "textbox",
+    "tool"
+  ],
+  "author": "Darron Park",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darron1217/fabric-addon/issues"
+  },
+  "homepage": "https://github.com/darron1217/fabric-addon#readme",
+  "dependencies": {
+    "fabric": "^2.3.3"
+  }
+}
