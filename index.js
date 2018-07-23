@@ -1,1 +1,1 @@
-require('./src/responsive-textbox');
+require('./src/fixed-textbox');
