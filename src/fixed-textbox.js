@@ -29,7 +29,7 @@ fabric.FixedTextbox = fabric.util.createClass(fabric.Textbox, {
   },
 });
 
-fabric.FixedTextbox.fromObject = function(object: any, callback: any) {
+fabric.FixedTextbox.fromObject = function(object, callback) {
   // Run toString() to make sure it is string
   object.text = object.text.toString();
   return fabric.Object._fromObject('FixedTextbox', object, callback, 'text');
