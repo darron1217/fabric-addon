@@ -58,7 +58,7 @@ fabric.FixedTextbox = fabric.util.createClass(fabric.Textbox, {
       // TODO: Else, cut the overflowed words
       // 아니라면, 넘치는 글자는 자름
     }
-  },
+  }
 
 });
 
