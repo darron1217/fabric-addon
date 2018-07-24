@@ -35,8 +35,8 @@
           top: 100,
           left: 100,
           width: 300,
+          height: 100,
           maxWidth: 300,
-          maxHeight: 100,
           fontSize: 20,
           textAlign: "center",
           fontResizing: true
@@ -47,16 +47,16 @@
           top: 250,
           left: 100,
           width: 300,
+          height: 100,
           maxWidth: 300,
-          maxHeight: 100,
           fontSize: 20,
           textAlign: "center",
           fontResizing: true
         });
 
         canvas.add(text1, text2);
-        document.getElementById('text1-size').innerHTML = 'Textbox1 Resized FontSize: ' + text1.originFontSize + ' => ' + text1.fontSize;
-        document.getElementById('text2-size').innerHTML = 'Textbox2 Resized FontSize: ' + text2.originFontSize + ' => ' + text2.fontSize;
+        document.getElementById('text1-size').innerHTML = 'Textbox1 Resized FontSize: ' + 20 + ' => ' + text1.fontSize;
+        document.getElementById('text2-size').innerHTML = 'Textbox2 Resized FontSize: ' + 20 + ' => ' + text2.fontSize;
         canvas.renderAll();
       }
     </script>

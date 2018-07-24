@@ -52,6 +52,7 @@ fabric.FixedTextbox = fabric.util.createClass(fabric.Textbox, {
       var textHeight = this.calcTextHeight();
       if(textHeight > this.height) {
         this.fontSize = this.fontSize / (textHeight / this.height);
+        this._initDimensions();
       }
     }
     else {
