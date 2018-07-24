@@ -14,7 +14,7 @@ fabric.FixedTextbox = fabric.util.createClass(fabric.Textbox, {
   _dimensionAffectingProps: fabric.Textbox.prototype._dimensionAffectingProps.concat('height'),
 
   /**
-   * initDimensions without height setting
+   * initDimensions (without height setting)
    */
   _initDimensions: function() {
     this.isEditing && this.initDelayedCursor();
@@ -40,15 +40,18 @@ fabric.FixedTextbox = fabric.util.createClass(fabric.Textbox, {
   initDimensions: function() {
     this._initDimensions();
 
+    // Use defined height as a fixed value. If there's no height value, then use calculated height
+    // 설정된 height를 사용. 높이값이 없다면, 계산된 높이값을 기본으로 사용
+    if(!this.height) this.height = this.calcTextHeight();
+
     // If fontResizing mode enabled
     // 폰트 리사이징 모드가 설정되어 있다면
     if(this.fontResizing) {
-      this.height = this.maxHeight;
-      if(!this.originFontSize) this.originFontSize = this.fontSize;
+      // Calc height
       // 높이구하기
       var textHeight = this.calcTextHeight();
-      if(textHeight > this.maxHeight) {
-        this.fontSize = this.fontSize / (textHeight / this.maxHeight);
+      if(textHeight > this.height) {
+        this.fontSize = this.fontSize / (textHeight / this.height);
       }
     }
     else {
