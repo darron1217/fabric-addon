@@ -1,6 +1,6 @@
 {
   "name": "fabric-addon",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Supportive library for fabricjs",
   "main": "index.js",
   "scripts": {
