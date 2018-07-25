@@ -42,7 +42,7 @@ fabric.FixedTextbox = fabric.util.createClass(fabric.Textbox, {
 
     // Use defined height as a fixed value. If there's no height value, then use max or calculated height
     // 설정된 height를 사용. 높이값이 없다면, 설정된 최대높이 또는 계산된 높이값을 사용
-    if(!this.height) this.height = object.maxHeight || this.calcTextHeight();
+    if(!this.height) this.height = this.maxHeight || this.calcTextHeight();
 
     // If fontResizing mode enabled
     // 폰트 리사이징 모드가 설정되어 있다면
