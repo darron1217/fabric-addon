@@ -47,12 +47,16 @@ fabric.FixedTextbox = fabric.util.createClass(fabric.Textbox, {
     // If fontResizing mode enabled
     // 폰트 리사이징 모드가 설정되어 있다면
     if(this.fontResizing) {
-      // Calc height
-      // 높이구하기
+      var textWidth = this.calcTextWidth();
       var textHeight = this.calcTextHeight();
-      if(textHeight > this.height) {
-        this.fontSize = this.fontSize / (textHeight / this.height);
-        this._initDimensions();
+      if (textWidth > this.maxWidth) {
+        this.fontSize -= 0.1;
+        this.width = this.maxWidth;
+        this.initDimensions();
+      }
+      else if(textHeight > this.height) {
+        this.fontSize -= 0.1;
+        this.initDimensions();
       }
     }
     else {
